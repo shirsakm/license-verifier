@@ -8,7 +8,6 @@ def login():
         username = request.form['username']
         password = request.form['password']
         
-        # Replace this with your actual user verification logic
         if username == 'admin' and password == 'password':
             session['user'] = username
             return redirect(url_for('main.dashboard'))
