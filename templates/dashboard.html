@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% set title = 'Dashboard' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>License ID</th>
+                <th>License Type</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for license in licenses %}
+            <tr>
+                <td>{{ license[0] }}</td>
+                <td>{{ license[1] }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('main.delete_license', license_id=license[0]) }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add New License</h2>
+    <form method="post" action="{{ url_for('main.add_license') }}">
+        <label for="licenseId">License ID:</label>
+        <input type="text" id="licenseId" name="licenseId" required>
+        
+        <label for="licenseType"> License Type:</label>
+        <input type="text" id="licenseType" name="licenseType" required>
+        
+        <button type="submit">Add License</button>
+    </form>
+{% endblock %}
