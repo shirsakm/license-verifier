@@ -15,4 +15,4 @@ def verify(license_id):
     return jsonify(status)
 
 if __name__ == '__main__':  
-    app.run(debug=True)
+    app.run()

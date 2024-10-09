@@ -11,7 +11,7 @@ def login():
         # Replace this with your actual user verification logic
         if username == 'admin' and password == 'password':
             session['user'] = username
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('main.dashboard'))
         else:
             flash('Invalid username or password')
     return render_template('auth/login.html')
