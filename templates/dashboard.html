@@ -19,7 +19,7 @@
                 <td>{{ license[0] }}</td>
                 <td>{{ license[1] }}</td>
                 <td>
-                    <form method="post" action="{{ url_for('main.delete_license', license_id=license[0]) }}">
+                    <form method="post" action="{{ url_for('main.delete_license_', license_id=license[0]) }}">
                         <button type="submit">Delete</button>
                     </form>
                 </td>
@@ -29,7 +29,7 @@
     </table>
 
     <h2>Add New License</h2>
-    <form method="post" action="{{ url_for('main.add_license') }}">
+    <form method="post" action="{{ url_for('main.add_license_') }}">
         <label for="licenseId">License ID:</label>
         <input type="text" id="licenseId" name="licenseId" required>
         
